@@ -13,9 +13,11 @@
             "watchwood\\BladeStrap\\": "src"
         }
     },
+    "require": {
+        "illuminate/support": "^5.1",
+        "illuminate/view": "^5.1"
+    },
     "require-dev": {
-        "phpunit/phpunit": "^5",
-        "illuminate/support": "~5",
-        "illuminate/view": "~5"
+        "phpunit/phpunit": "^5"
     }
 }
