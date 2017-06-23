@@ -14,13 +14,13 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      * @return void
      */
     public function boot() {
-        Blade::directive('panel', BladeStrap::panel);		
+        Blade::directive('panel', BladeStrap::class.'::panel');		
 		
-        Blade::directive('endpanel', BladeStrap::endpanel );
+        Blade::directive('endpanel', BladeStrap::class.'::endPanel');
 		
-        Blade::directive('alert', BladeStrap::alert);		
+        Blade::directive('alert', BladeStrap::class.'::alert');		
 		
-        Blade::directive('endalert', BladeStrap::endalert);
+        Blade::directive('endalert', BladeStrap::class.'::endalert');
     }
 
     /**
