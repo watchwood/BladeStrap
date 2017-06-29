@@ -16,12 +16,12 @@ class BladeStrap
 	
 	public static function panel($expression) {
 		$params = static::getParams($expression);
-		$title = static::trim($params[0]);
-		$class = isset($params[1]) ? "panel-".static::trim($params[1]) : "panel-default";
+		$title = trim($params[0]);
+		$class = isset($params[1]) ? "'panel-".static::trim($params[1])."'" : "'panel-default'";
 		
-		$html = "<div class='panel {$class}'>";
+		$html = "<div class='panel <?={$class}?>'>";
 		if ($title) {
-			$html .= "<div class='panel-heading'><h3 class='panel-title'>{$title}</h3></div>";
+			$html .= "<div class='panel-heading'><h3 class='panel-title'><?={$title}?></h3></div>";
 		}
 		$html .= "<div class='panel-body'>";
 				   
@@ -37,11 +37,11 @@ class BladeStrap
 	
 	public static function alert($expression) {
 		$params = static::getParams($expression);
-		$title = static::trim($params[0]);
-		$class = isset($params[1]) ? "alert-".static::trim($params[1]) : "alert-info";
+		$title = trim($params[0]);
+		$class = isset($params[1]) ? "'alert-".static::trim($params[1])."'" : "'alert-info'";
 				   
 		
-		$html = "<div class='alert {$class}'>";
+		$html = "<div class='alert <?={$class}?>'>";
 		if ($title) {
 			$html .= "<h5>{$title}</h5>";
 		}

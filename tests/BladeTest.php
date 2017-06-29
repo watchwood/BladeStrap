@@ -11,15 +11,15 @@ class BladeTest extends TestCase
 	public function testPanel(){
 		//default panel
 		$string = BladeStrap::panel("");
-        $this->assertEquals("<div class='panel panel-default'><div class='panel-body'>", $string);
+        $this->assertEquals("<div class='panel <?='panel-default'?>'><div class='panel-body'>", $string);
         
         //string titles get passed to result
 		$string = BladeStrap::panel("'Test Title'");
-		$this->assertContains(">Test Title<", $string);
+		$this->assertContains("Test Title", $string);
         
         //variable titles get passed to result
 		$string = BladeStrap::panel('$title');
-		$this->assertContains('>$title<', $string);
+		$this->assertContains('$title', $string);
         
         //custom panel types titles
 		$string = BladeStrap::panel('($title, "primary")');
@@ -37,15 +37,15 @@ class BladeTest extends TestCase
 	public function testAlert(){
 		//default
 		$string = BladeStrap::alert("");
-        $this->assertEquals("<div class='alert alert-info'>", $string);
+        $this->assertEquals("<div class='alert <?='alert-info'?>'>", $string);
         
         //string titles get passed to result
 		$string = BladeStrap::alert("'Test Title'");
-		$this->assertContains(">Test Title<", $string);
+		$this->assertContains("Test Title", $string);
         
         //variable titles get passed to result
 		$string = BladeStrap::alert('$title');
-		$this->assertContains('>$title<', $string);
+		$this->assertContains('$title', $string);
         
         //custom alert types titles
 		$string = BladeStrap::alert('($title, "primary")');
